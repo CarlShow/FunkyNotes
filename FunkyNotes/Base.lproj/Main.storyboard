@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,88 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FunkyNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Pz-Wt-qPs">
+                                <rect key="frame" x="57" y="44" width="300" height="118"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-ei-lkg">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCx-0q-MFE">
+                                        <rect key="frame" x="0.0" y="42.5" width="300" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TkS-KR-khK">
+                                        <rect key="frame" x="0.0" y="85.5" width="300" height="32.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX5-pI-sKg">
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="32.5"/>
+                                                <color key="backgroundColor" red="0.68245993949999995" green="0.63450688070000005" blue="0.86087566609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Calculate Area">
+                                                    <color key="titleColor" red="0.26045581699999998" green="0.21252644770000001" blue="0.14686409910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMW-JL-7nb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOx-er-FIt">
+                                                <rect key="frame" x="155" y="0.0" width="145" height="32.5"/>
+                                                <color key="backgroundColor" red="0.56245033166729463" green="0.67550582120000002" blue="0.58262573847014543" alpha="0.92858068199999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="( Area )"/>
+                                                <connections>
+                                                    <action selector="swapping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZAo-T3-A3b"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Pz-Wt-qPs" secondAttribute="height" multiplier="150:59" id="VJy-id-IKY"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-Zc-6uE">
+                                <rect key="frame" x="54" y="534" width="303" height="243"/>
+                                <color key="backgroundColor" red="0.76179726670000003" green="0.81815099229999999" blue="0.77058960919999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="243" id="xi4-ja-uJz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.81815099234532829" green="0.75162567984870288" blue="0.703942884005888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7L1-Zc-6uE" secondAttribute="bottom" constant="85" id="2BT-f9-mM7"/>
+                            <constraint firstItem="7L1-Zc-6uE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="2TR-Js-M1v"/>
+                            <constraint firstItem="0Pz-Wt-qPs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2uO-w1-43A"/>
+                            <constraint firstItem="0Pz-Wt-qPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="8VQ-No-YV0"/>
+                            <constraint firstItem="0Pz-Wt-qPs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xic-1c-lKw"/>
+                            <constraint firstItem="0Pz-Wt-qPs" firstAttribute="centerX" secondItem="7L1-Zc-6uE" secondAttribute="centerX" constant="1.5" id="hUz-IW-p3E"/>
+                            <constraint firstItem="0Pz-Wt-qPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="mWz-FP-5Se"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Pz-Wt-qPs" secondAttribute="trailing" constant="57" id="u5m-4g-Yxu"/>
+                            <constraint firstItem="0Pz-Wt-qPs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vfx-gy-box"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inp1" destination="Xgt-ei-lkg" id="xCS-SO-tlw"/>
+                        <outlet property="inp2" destination="MCx-0q-MFE" id="X08-Hy-gln"/>
+                        <outlet property="printField" destination="7L1-Zc-6uE" id="mOe-27-zKP"/>
+                        <outlet property="swapper" destination="VOx-er-FIt" id="Ip8-V0-XEH"/>
+                        <outlet property="theButton" destination="OX5-pI-sKg" id="i81-pd-r5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </scene>
     </scenes>
 </document>
